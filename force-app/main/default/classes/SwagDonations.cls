@@ -13,7 +13,7 @@
 /**
  * SwagDonations
  */
-public class SwagDonations implements Swagger.MappedProperties {
+public class SwagDonations {
     /**
      * Get ID
      * @return ID
@@ -30,7 +30,7 @@ public class SwagDonations implements Swagger.MappedProperties {
      * Get transactionId
      * @return transactionId
      */
-    public String transactionId { get; set; }
+    public String transaction_id { get; set; }
 
     /**
      * Get key
@@ -84,13 +84,13 @@ public class SwagDonations implements Swagger.MappedProperties {
      * Get r_date
      * @return r_date
      */
-    public Datetime r_date { get; set; }
+    public String r_date { get; set; }
 
     /**
      * Get paymentMeta
      * @return paymentMeta
      */
-    public SwagPaymentMeta paymentMeta { get; set; }
+    public SwagPaymentMeta payment_meta { get; set; }
 
     /**
      * Get form
@@ -98,11 +98,9 @@ public class SwagDonations implements Swagger.MappedProperties {
      */
     public SwagForm form { get; set; }
 
-    private static final Map<String, String> propertyMappings = new Map<String, String>{
-        'number' => 'r_number',
-        'transaction_id' => 'transactionId',
-        'date' => 'r_date',
-        'payment_meta' => 'paymentMeta'
+    public static final Map<String, String> propertyMappings = new Map<String, String>{
+            'number' => 'r_number',
+            'date' => 'r_date'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -113,7 +111,7 @@ public class SwagDonations implements Swagger.MappedProperties {
         SwagDonations donations = new SwagDonations();
           donations.ID = 0;
           donations.r_number = 0;
-          donations.transactionId = '';
+          donations.transaction_id = '';
           donations.key = '';
           donations.total = 0;
           donations.status = '';
@@ -122,8 +120,8 @@ public class SwagDonations implements Swagger.MappedProperties {
           donations.fname = '';
           donations.lname = '';
           donations.email = '';
-          donations.r_date = Datetime.newInstanceGmt(2000, 1, 23, 4, 56, 7);
-          donations.paymentMeta = null;
+          donations.r_date = '';
+          donations.payment_meta = null;
           donations.form = null;
         return donations;
     }
@@ -133,7 +131,7 @@ public class SwagDonations implements Swagger.MappedProperties {
             SwagDonations donations = (SwagDonations) obj;
             return this.ID == donations.ID
                 && this.r_number == donations.r_number
-                && this.transactionId == donations.transactionId
+                && this.transaction_id == donations.transaction_id
                 && this.key == donations.key
                 && this.total == donations.total
                 && this.status == donations.status
@@ -143,7 +141,7 @@ public class SwagDonations implements Swagger.MappedProperties {
                 && this.lname == donations.lname
                 && this.email == donations.email
                 && this.r_date == donations.r_date
-                && this.paymentMeta == donations.paymentMeta
+                && this.payment_meta == donations.payment_meta
                 && this.form == donations.form;
         }
         return false;
@@ -153,7 +151,7 @@ public class SwagDonations implements Swagger.MappedProperties {
         Integer hashCode = 43;
         hashCode = (17 * hashCode) + (ID == null ? 0 : System.hashCode(ID));
         hashCode = (17 * hashCode) + (r_number == null ? 0 : System.hashCode(r_number));
-        hashCode = (17 * hashCode) + (transactionId == null ? 0 : System.hashCode(transactionId));
+        hashCode = (17 * hashCode) + (transaction_id == null ? 0 : System.hashCode(transaction_id));
         hashCode = (17 * hashCode) + (key == null ? 0 : System.hashCode(key));
         hashCode = (17 * hashCode) + (total == null ? 0 : System.hashCode(total));
         hashCode = (17 * hashCode) + (status == null ? 0 : System.hashCode(status));
@@ -163,7 +161,7 @@ public class SwagDonations implements Swagger.MappedProperties {
         hashCode = (17 * hashCode) + (lname == null ? 0 : System.hashCode(lname));
         hashCode = (17 * hashCode) + (email == null ? 0 : System.hashCode(email));
         hashCode = (17 * hashCode) + (r_date == null ? 0 : System.hashCode(r_date));
-        hashCode = (17 * hashCode) + (paymentMeta == null ? 0 : System.hashCode(paymentMeta));
+        hashCode = (17 * hashCode) + (payment_meta == null ? 0 : System.hashCode(payment_meta));
         hashCode = (17 * hashCode) + (form == null ? 0 : System.hashCode(form));
         return hashCode;
     }

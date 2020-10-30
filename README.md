@@ -46,8 +46,8 @@ SwagDefaultApi api = new SwagDefaultApi();
 
 Map<String, Object> params = new Map<String, Object>{
     'r_number' => '"50"',
-    'key' => '"f9a7930c7009cb8aefa17246278dcbfb"',
-    'token' => '"17c5722a8992a0a7d373d58aea5d9150"',
+    'key' => '"<Give API key>"',
+    'token' => '"<Give API token>"',
     'r_date' => '"yesterday"'
 };
 

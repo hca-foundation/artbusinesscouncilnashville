@@ -191,6 +191,19 @@ public class Swagger {
                         body = body.replaceAll('"' + baseName + '"\\s*:',
                             '"' + propertyMappings.get(baseName) + '":');
                     }
+                    // TODO: This is real hacky, but needed to get past this quick.
+                    // Problem here is that this code is only doing property mapping
+                    // on this highest level object which is always SwagModel0 and
+                    // doesn't update property names for complex object arrays below
+                    // top level like SwagModel0.Donations
+                    for (String baseName : SwagPaymentMeta.propertyMappings.keySet()) {
+                        body = body.replaceAll('"' + baseName + '"\\s*:',
+                                '"' + SwagPaymentMeta.propertyMappings.get(baseName) + '":');
+                    }
+                    for (String baseName : SwagDonations.propertyMappings.keySet()) {
+                        body = body.replaceAll('"' + baseName + '"\\s*:',
+                                '"' + SwagDonations.propertyMappings.get(baseName) + '":');
+                    }
                 }
                 JsonParser parser = Json.createParser(body);
                 parser.nextToken();

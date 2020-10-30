@@ -24,14 +24,14 @@
             "in": "query",
             "required": false,
             "type": "string",
-            "x-example": "f9a7930c7009cb8aefa17246278dcbfb"
+            "x-example": "<Key>"
           },
           {
             "name": "token",
             "in": "query",
             "required": false,
             "type": "string",
-            "x-example": "17c5722a8992a0a7d373d58aea5d9150"
+            "x-example": "<Token>"
           },
           {
             "name": "date",

@@ -68,14 +68,4 @@ private class SwagDonationsTest {
         System.assertEquals(donations1.hashCode(), donations2.hashCode());
         System.assertEquals(donations3.hashCode(), donations4.hashCode());
     }
-
-    @isTest
-    private static void maintainRenamedProperties() {
-        SwagDonations donations = new SwagDonations();
-        Map<String, String> propertyMappings = donations.getPropertyMappings();
-        System.assertEquals('r_number', propertyMappings.get('number'));
-        System.assertEquals('transactionId', propertyMappings.get('transaction_id'));
-        System.assertEquals('r_date', propertyMappings.get('date'));
-        System.assertEquals('paymentMeta', propertyMappings.get('payment_meta'));
-    }
 }

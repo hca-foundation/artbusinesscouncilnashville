@@ -36,13 +36,13 @@ public class SwagForm implements Swagger.MappedProperties {
      * Get priceName
      * @return priceName
      */
-    public String priceName { get; set; }
+    public String price_name { get; set; }
 
     /**
      * Get priceId
      * @return priceId
      */
-    public String priceId { get; set; }
+    public String price_id { get; set; }
 
     private static final Map<String, String> propertyMappings = new Map<String, String>{
         'price_name' => 'priceName',
@@ -58,8 +58,8 @@ public class SwagForm implements Swagger.MappedProperties {
           form.id = 0;
           form.name = '';
           form.price = 1.3579;
-          form.priceName = '';
-          form.priceId = '';
+          form.price_name = '';
+          form.price_id = '';
         return form;
     }
 
@@ -69,8 +69,8 @@ public class SwagForm implements Swagger.MappedProperties {
             return this.id == form.id
                 && this.name == form.name
                 && this.price == form.price
-                && this.priceName == form.priceName
-                && this.priceId == form.priceId;
+                && this.price_name == form.price_name
+                && this.price_id == form.price_id;
         }
         return false;
     }
@@ -80,8 +80,8 @@ public class SwagForm implements Swagger.MappedProperties {
         hashCode = (17 * hashCode) + (id == null ? 0 : System.hashCode(id));
         hashCode = (17 * hashCode) + (name == null ? 0 : System.hashCode(name));
         hashCode = (17 * hashCode) + (price == null ? 0 : System.hashCode(price));
-        hashCode = (17 * hashCode) + (priceName == null ? 0 : System.hashCode(priceName));
-        hashCode = (17 * hashCode) + (priceId == null ? 0 : System.hashCode(priceId));
+        hashCode = (17 * hashCode) + (price_name == null ? 0 : System.hashCode(price_name));
+        hashCode = (17 * hashCode) + (price_id == null ? 0 : System.hashCode(price_id));
         return hashCode;
     }
 }

@@ -1,0 +1,26 @@
+{[ID=7944
+  email=mike.bzozowski@gmail.com
+  fname=Mike
+  form=SwagForm:[id=2456
+    name=Membership
+    price=100.0
+    priceId=null
+    priceName=null
+    propertyMappings={price_id=priceId
+      price_name=priceName}]
+  gateway=stripe
+  key=dbd3b6b011846ce4e78b91a670c94fbf
+  lname=Bzozowski
+  name=Mike Bzozowski
+  paymentMeta=null
+  propertyMappings={date=r_date
+    number=r_number
+    payment_meta=paymentMeta
+    transaction_id=transactionId}
+  r_date=null
+  r_number=null
+  status=Complete
+  total=103
+  transactionId=null])
+propertyMappings={request_speed=requestSpeed}
+requestSpeed=0.0518338680267334]}

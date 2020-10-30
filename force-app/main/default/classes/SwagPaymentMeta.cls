@@ -192,9 +192,9 @@ public class SwagPaymentMeta implements Swagger.MappedProperties {
      * Get giveCompletedDate
      * @return giveCompletedDate
      */
-    public Datetime giveCompletedDate { get; set; }
+    public String giveCompletedDate { get; set; }
 
-    private static final Map<String, String> propertyMappings = new Map<String, String>{
+    public static final Map<String, String> propertyMappings = new Map<String, String>{
         '_give_payment_currency' => 'givePaymentCurrency',
         '_give_donor_billing_first_name' => 'giveDonorBillingFirstName',
         '_give_donor_billing_last_name' => 'giveDonorBillingLastName',
@@ -262,7 +262,7 @@ public class SwagPaymentMeta implements Swagger.MappedProperties {
           paymentMeta.giveStripeDonationSummary = '';
           paymentMeta.giveStripePaymentIntentClientSecret = '';
           paymentMeta.givePaymentTransactionId = '';
-          paymentMeta.giveCompletedDate = Datetime.newInstanceGmt(2000, 1, 23, 4, 56, 7);
+          paymentMeta.giveCompletedDate = '';
         return paymentMeta;
     }
 
