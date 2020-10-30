@@ -1,0 +1,244 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "GiveWP Donation API",
+    "version": "0.1",
+    "title": "GiveWP"
+  },
+  "paths": {
+    "/give-api/donations": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "number",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "50"
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "f9a7930c7009cb8aefa17246278dcbfb"
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "17c5722a8992a0a7d373d58aea5d9150"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "yesterday"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Definition generated from Swagger Inspector",
+            "schema": {
+              "$ref": "#/definitions/Model0"
+            }
+          },
+          "default": {
+            "description": "Definition generated from Swagger Inspector"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Payment_meta": {
+      "properties": {
+        "_give_payment_currency": {
+          "type": "string"
+        },
+        "_give_donor_billing_first_name": {
+          "type": "string"
+        },
+        "_give_donor_billing_last_name": {
+          "type": "string"
+        },
+        "_give_donor_billing_address1": {
+          "type": "string"
+        },
+        "_give_donor_billing_address2": {
+          "type": "string"
+        },
+        "_give_donor_billing_city": {
+          "type": "string"
+        },
+        "_give_donor_billing_state": {
+          "type": "string"
+        },
+        "_give_donor_billing_zip": {
+          "type": "string"
+        },
+        "_give_donor_billing_country": {
+          "type": "string"
+        },
+        "_give_payment_gateway": {
+          "type": "string"
+        },
+        "_give_payment_donor_email": {
+          "type": "string"
+        },
+        "_give_payment_donor_title_prefix": {
+          "type": "string"
+        },
+        "_give_payment_donor_ip": {
+          "type": "string"
+        },
+        "_give_payment_mode": {
+          "type": "string"
+        },
+        "_give_payment_donor_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "_give_is_donation_recurring": {
+          "type": "string"
+        },
+        "_give_current_url": {
+          "type": "string"
+        },
+        "_give_current_page_id": {
+          "type": "string"
+        },
+        "_give_anonymous_donation": {
+          "type": "string"
+        },
+        "_give_stripe_account_slug": {
+          "type": "string"
+        },
+        "_give_fee_donation_amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "_give_fee_amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "arts_organization_if_applicable": {
+          "type": "string"
+        },
+        "_give-form-fields_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "_give_stripe_customer_id": {
+          "type": "string"
+        },
+        "_give_stripe_source_id": {
+          "type": "string"
+        },
+        "_give_stripe_donation_summary": {
+          "type": "string"
+        },
+        "_give_stripe_payment_intent_client_secret": {
+          "type": "string"
+        },
+        "_give_payment_transaction_id": {
+          "type": "string"
+        },
+        "_give_completed_date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "Form": {
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number",
+          "format": "float"
+        },
+        "price_name": {
+          "type": "string"
+        },
+        "price_id": {
+          "type": "string"
+        }
+      }
+    },
+    "Donations": {
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "number": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "transaction_id": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "status": {
+          "type": "string"
+        },
+        "gateway": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "fname": {
+          "type": "string"
+        },
+        "lname": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payment_meta": {
+          "$ref": "#/definitions/Payment_meta"
+        },
+        "form": {
+          "$ref": "#/definitions/Form"
+        }
+      }
+    },
+    "Model0": {
+      "properties": {
+        "donations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Donations"
+          }
+        },
+        "request_speed": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    }
+  }
+}
