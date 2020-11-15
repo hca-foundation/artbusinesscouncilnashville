@@ -5,13 +5,14 @@
 global class GiveWPDonationService {
     @InvocableMethod(Label='Get Donations' Description='Pulls donations from the GiveWP WordPress extension' Category='Custom')
     global static List<List<Donation>> getDonations(List<List<DonationParameter>> parameters) {
+        System.debug('Invoke get donations');
         SwagDefaultApi api = new SwagDefaultApi();
 
         Map<String, Object> params = new Map<String, Object>{
-                'key' => parameters[0][0].key,
-                'token' => parameters[0][0].token,
-                //'r_date' => 'yesterday'
-                'r_number' => '25'
+            'key' => parameters[0][0].key,
+            'token' => parameters[0][0].token,
+            //'r_date' => 'yesterday'
+            'r_number' => '25'
         };
 
         SwagModel0 result = api.giveApiDonationsGet(params);
@@ -27,6 +28,7 @@ global class GiveWPDonationService {
         return returnList;
     }
 
+    @TestVisible
     private static Donation buildDonationFromSwagDonation(SwagDonations swagDonation) {
         Donation donation = new Donation();
         donation.giveId = swagDonation.ID;

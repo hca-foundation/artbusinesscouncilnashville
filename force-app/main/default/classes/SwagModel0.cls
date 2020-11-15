@@ -61,4 +61,3 @@ global class SwagModel0 implements Swagger.MappedProperties {
         return hashCode;
     }
 }
-

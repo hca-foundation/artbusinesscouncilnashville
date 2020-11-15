@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Individual: Student</label>
+    <protected>false</protected>
+    <values>
+        <field>Campaign__c</field>
+        <value xsi:type="xsd:string">7011g000000G4fe</value>
+    </values>
+    <values>
+        <field>Donation_Record_Type__c</field>
+        <value xsi:type="xsd:string">Membership</value>
+    </values>
+    <values>
+        <field>Membership_Sub_Type__c</field>
+        <value xsi:type="xsd:string">Student</value>
+    </values>
+    <values>
+        <field>Membership_Type__c</field>
+        <value xsi:type="xsd:string">Individual</value>
+    </values>
+    <values>
+        <field>Stage__c</field>
+        <value xsi:type="xsd:string">Active</value>
+    </values>
+    <values>
+        <field>Type__c</field>
+        <value xsi:type="xsd:string">Membership</value>
+    </values>
+</CustomMetadata>

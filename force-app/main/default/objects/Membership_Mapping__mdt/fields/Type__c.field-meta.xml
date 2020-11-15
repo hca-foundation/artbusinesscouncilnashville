@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Membership</fullName>
+                <default>true</default>
+                <label>Membership</label>
+            </value>
+            <value>
+                <fullName>Donation</fullName>
+                <default>false</default>
+                <label>Donation</label>
+            </value>
+            <value>
+                <fullName>Grant</fullName>
+                <default>false</default>
+                <label>Grant</label>
+            </value>
+            <value>
+                <fullName>Single</fullName>
+                <default>false</default>
+                <label>Single</label>
+            </value>
+            <value>
+                <fullName>Recurring</fullName>
+                <default>false</default>
+                <label>Recurring</label>
+            </value>
+            <value>
+                <fullName>Pledge</fullName>
+                <default>false</default>
+                <label>Pledge</label>
+            </value>
+            <value>
+                <fullName>Major Gift</fullName>
+                <default>false</default>
+                <label>Major Gift</label>
+            </value>
+            <value>
+                <fullName>Matching</fullName>
+                <default>false</default>
+                <label>Matching</label>
+            </value>
+            <value>
+                <fullName>Enterprise - $2,500</fullName>
+                <default>false</default>
+                <label>Enterprise - $2,500</label>
+            </value>
+            <value>
+                <fullName>Corporate - $1,250</fullName>
+                <default>false</default>
+                <label>Corporate - $1,250</label>
+            </value>
+            <value>
+                <fullName>Business - $500</fullName>
+                <default>false</default>
+                <label>Business - $500</label>
+            </value>
+            <value>
+                <fullName>Small Business - $300</fullName>
+                <default>false</default>
+                <label>Small Business - $300</label>
+            </value>
+            <value>
+                <fullName>Entrepreneur - $150</fullName>
+                <default>false</default>
+                <label>Entrepreneur - $150</label>
+            </value>
+            <value>
+                <fullName>Individual - $100</fullName>
+                <default>false</default>
+                <label>Individual - $100</label>
+            </value>
+            <value>
+                <fullName>Visionary - $50,000.00</fullName>
+                <default>false</default>
+                <label>Visionary - $50,000.00</label>
+            </value>
+            <value>
+                <fullName>Lead Investor - $25,000.00</fullName>
+                <default>false</default>
+                <label>Lead Investor - $25,000.00</label>
+            </value>
+            <value>
+                <fullName>Investor - $15,000.00</fullName>
+                <default>false</default>
+                <label>Investor - $15,000.00</label>
+            </value>
+            <value>
+                <fullName>Catalyst - $10,000.00</fullName>
+                <default>false</default>
+                <label>Catalyst - $10,000.00</label>
+            </value>
+            <value>
+                <fullName>Chairman&apos;s Circle - $7,500.00</fullName>
+                <default>false</default>
+                <label>Chairman&apos;s Circle - $7,500.00</label>
+            </value>
+            <value>
+                <fullName>President&apos;s Circle - $5,000.00</fullName>
+                <default>false</default>
+                <label>President&apos;s Circle - $5,000.00</label>
+            </value>
+            <value>
+                <fullName>Executive Circle - $3,500.00</fullName>
+                <default>false</default>
+                <label>Executive Circle - $3,500.00</label>
+            </value>
+            <value>
+                <fullName>Super Fan - $2,500.00</fullName>
+                <default>false</default>
+                <label>Super Fan - $2,500.00</label>
+            </value>
+            <value>
+                <fullName>Patron - $1,500.00</fullName>
+                <default>false</default>
+                <label>Patron - $1,500.00</label>
+            </value>
+            <value>
+                <fullName>Fan - $1,250.00</fullName>
+                <default>false</default>
+                <label>Fan - $1,250.00</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

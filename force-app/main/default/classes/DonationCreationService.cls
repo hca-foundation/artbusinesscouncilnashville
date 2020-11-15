@@ -5,6 +5,7 @@
 public class DonationCreationService {
     @InvocableMethod(Label='Build Opportunities from Donations' Description='Given donations in, build opportunity records' Category='Custom')
     public static List<List<Opportunity>> buildOpportunities(List<List<Donation>> donations) {
+        System.debug('Invoke build opportunities');
         List<Opportunity> opportunities = new List<Opportunity>();
 
         Map<String, Membership_Mapping__mdt> maps = MappingMetadataSelector.getMembershipMappingsByLabel();
@@ -103,14 +104,8 @@ public class DonationCreationService {
         opportunity.CloseDate = donation.giveDate?.date();
 
         // Populate fields with logic rules
-        if (donation.donationAmount != null && donation.donationAmount != 0) {
-            opportunity.Amount = donation.donationAmount;
-        }
-        else {
-            opportunity.Amount = donation.totalAmount;
-        }
-        opportunity.Amount = donation.donationAmount;
-        opportunity.Name = currentMap.Type__c + donation.name;
+        opportunity.Amount = donation.donationAmount == null ? donation.totalAmount : donation.donationAmount;
+        opportunity.Name = 'FY' + Date.today().year() + ' ' + currentMap.Type__c + ' ' + donation.name;
         if (donation.giveCurrentUrl.toUpperCase().contains('DONATIONS') || donation.giveCurrentUrl.toUpperCase().contains('DONATE')) {
             opportunity.Fiscally_Sponsored_Project_Name__c = donation.formName;
         }

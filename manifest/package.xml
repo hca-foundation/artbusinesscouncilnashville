@@ -36,5 +36,41 @@
         <members>GiveWP_API</members>
         <name>NamedCredential</name>
     </types>
+    <types>
+        <members>Give_API_Token.Production</members>
+        <members>Membership_Mapping.Donation_Individual</members>
+        <members>Membership_Mapping.Donation_Organization</members>
+        <members>Membership_Mapping.Individual_Basic</members>
+        <members>Membership_Mapping.Individual_Champion</members>
+        <members>Membership_Mapping.Individual_Student</members>
+        <members>Membership_Mapping.Organization_1MM</members>
+        <members>Membership_Mapping.Organization_250k</members>
+        <members>Membership_Mapping.Organization_250k_500k</members>
+        <members>Membership_Mapping.Organization_500k_1MM</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>Nightly_Donation_Load</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Give_API_Token__mdt.Individual_Account_ID__c</members>
+        <members>Give_API_Token__mdt.Organizational_Account_ID__c</members>
+        <members>Give_API_Token__mdt.Public_Key__c</members>
+        <members>Give_API_Token__mdt.Token__c</members>
+        <members>Membership_Mapping__mdt.Campaign__c</members>
+        <members>Membership_Mapping__mdt.Donation_Record_Type__c</members>
+        <members>Membership_Mapping__mdt.Membership_Sub_Type__c</members>
+        <members>Membership_Mapping__mdt.Membership_Type__c</members>
+        <members>Membership_Mapping__mdt.Stage__c</members>
+        <members>Membership_Mapping__mdt.Type__c</members>
+        <members>Opportunity.User_Entered_Organization_Name__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Give_API_Token__mdt</members>
+        <members>Membership_Mapping__mdt</members>
+        <name>CustomObject</name>
+    </types>
     <version>50.0</version>
 </Package>

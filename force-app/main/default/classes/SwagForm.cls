@@ -85,4 +85,3 @@ public class SwagForm implements Swagger.MappedProperties {
         return hashCode;
     }
 }
-

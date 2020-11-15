@@ -338,4 +338,3 @@ public class SwagPaymentMeta implements Swagger.MappedProperties {
         return hashCode;
     }
 }
-
