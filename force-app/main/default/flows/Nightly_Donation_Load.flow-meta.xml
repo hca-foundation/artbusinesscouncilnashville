@@ -118,8 +118,8 @@
         </connector>
         <schedule>
             <frequency>Daily</frequency>
-            <startDate>2020-11-01</startDate>
-            <startTime>18:45:00.000Z</startTime>
+            <startDate>2020-11-15</startDate>
+            <startTime>23:00:00.000Z</startTime>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>

@@ -11,8 +11,8 @@ global class GiveWPDonationService {
         Map<String, Object> params = new Map<String, Object>{
             'key' => parameters[0][0].key,
             'token' => parameters[0][0].token,
-            //'r_date' => 'yesterday'
-            'r_number' => '25'
+            'r_date' => 'yesterday'
+            //'r_number' => 'yesterday'
         };
 
         SwagModel0 result = api.giveApiDonationsGet(params);
