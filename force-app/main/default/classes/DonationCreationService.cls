@@ -5,7 +5,6 @@
 public class DonationCreationService {
     @InvocableMethod(Label='Build Opportunities from Donations' Description='Given donations in, build opportunity records' Category='Custom')
     public static List<List<Opportunity>> buildOpportunities(List<List<Donation>> donations) {
-        System.debug('Invoke build opportunities');
         List<Opportunity> opportunities = new List<Opportunity>();
 
         Map<String, Membership_Mapping__mdt> maps = MappingMetadataSelector.getMembershipMappingsByLabel();
@@ -48,8 +47,7 @@ public class DonationCreationService {
                                     foundOpportunity,
                                     existingIndividualContacts,
                                     existingOrganizationalContacts,
-                                    giveMetadata.Individual_Account_ID__c,
-                                    giveMetadata.Organizational_Account_Id__c
+                                    giveMetadata
                             )
                     );
                 }
@@ -58,6 +56,7 @@ public class DonationCreationService {
 
         List<List<Opportunity>> returnList = new List<List<Opportunity>>();
         insert opportunities;
+        System.debug(opportunities);
         returnList.add(opportunities);
         return returnList;
     }
@@ -69,8 +68,7 @@ public class DonationCreationService {
             Opportunity foundOpportunity,
             Map<String, Contact> existingIndividualContacts,
             Map<String, Contact> existingOrganizationalContacts,
-            Id individualAccountId,
-            Id organizationalAccountId
+            Give_API_Token__mdt giveMetadata
     ) {
         Opportunity opportunity;
         if (foundOpportunity != null) {
@@ -105,7 +103,7 @@ public class DonationCreationService {
 
         // Populate fields with logic rules
         opportunity.Amount = donation.donationAmount == null ? donation.totalAmount : donation.donationAmount;
-        opportunity.Name = 'FY' + Date.today().year() + ' ' + currentMap.Type__c + ' ' + donation.name;
+        opportunity.Name = giveMetadata.Donation_Prefix__c + ' ' + currentMap.Type__c + ' ' + donation.name;
         if (donation.giveCurrentUrl.toUpperCase().contains('DONATIONS') || donation.giveCurrentUrl.toUpperCase().contains('DONATE')) {
             opportunity.Fiscally_Sponsored_Project_Name__c = donation.formName;
         }
@@ -115,7 +113,7 @@ public class DonationCreationService {
             if (existingIndividualContacts.containsKey(donation.email.toUpperCase())) {
                 opportunity.ContactId = existingIndividualContacts.get(donation.email.toUpperCase()).Id;
                 opportunity.Primary_Contact__c = existingIndividualContacts.get(donation.email.toUpperCase()).Id;
-                opportunity.AccountId = individualAccountId;
+                opportunity.AccountId = giveMetadata.Individual_Account_ID__c;
             }
             else if (existingOrganizationalContacts.containsKey(donation.email.toUpperCase())) {
                 opportunity.StageName = 'Pending';
@@ -124,11 +122,11 @@ public class DonationCreationService {
                 opportunity.AccountId = existingOrganizationalContacts.get(donation.email.toUpperCase()).AccountId;
             }
             else {
-                Contact contact = generateContactFromDonation(donation, individualAccountId);
+                Contact contact = generateContactFromDonation(donation, giveMetadata.Individual_Account_ID__c);
                 // TODO: Bulkify
                 insert contact;
                 opportunity.ContactId = contact.Id;
-                opportunity.AccountId = individualAccountId;
+                opportunity.AccountId = giveMetadata.Individual_Account_ID__c;
             }
         }
 
@@ -145,14 +143,14 @@ public class DonationCreationService {
                 opportunity.StageName = 'Pending';
                 opportunity.ContactId = existingIndividualContacts.get(donation.email.toUpperCase()).Id;
                 opportunity.Primary_Contact__c = existingIndividualContacts.get(donation.email.toUpperCase()).Id;
-                opportunity.AccountId = individualAccountId;
+                opportunity.AccountId = giveMetadata.Individual_Account_ID__c;
             }
             else {
-                Contact contact = generateContactFromDonation(donation, organizationalAccountId);
+                Contact contact = generateContactFromDonation(donation, giveMetadata.Organizational_Account_ID__c);
                 // TODO: Bulkify
                 insert contact;
                 opportunity.ContactId = contact.Id;
-                opportunity.AccountId = organizationalAccountId;
+                opportunity.AccountId = giveMetadata.Individual_Account_ID__c;
             }
         }
 

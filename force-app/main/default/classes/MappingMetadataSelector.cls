@@ -37,6 +37,7 @@ public class MappingMetadataSelector {
                         Id,
                         Individual_Account_Id__c,
                         Organizational_Account_Id__c,
+                        Donation_Prefix__c,
                         Label,
                         Language,
                         MasterLabel,

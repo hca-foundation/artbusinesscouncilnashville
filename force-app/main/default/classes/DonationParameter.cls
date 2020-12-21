@@ -10,4 +10,12 @@ global class DonationParameter {
     @InvocableVariable
     @AuraEnabled
     global String token;
+
+    @InvocableVariable
+    @AuraEnabled
+    global String dateParam;
+
+    @InvocableVariable
+    @AuraEnabled
+    global String numberParam;
 }
